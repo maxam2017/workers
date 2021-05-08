@@ -5,6 +5,8 @@
   "author": "maxam2017 <whk0313@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "sh ./scripts/wrangler.sh dev",
+    "build": "sh ./scripts/wrangler.sh build",
     "generate": "sh ./scripts/generate.sh"
   },
   "devDependencies": {
