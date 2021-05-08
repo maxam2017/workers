@@ -1,0 +1,12 @@
+# https://developers.cloudflare.com/workers/cli-wrangler/configuration
+
+name = "url-shortener"
+type = "javascript"
+account_id = "75ed923ff0a66b8294368448841bb028"
+zone_id = ""
+route = ""
+workers_dev = true
+
+[build]
+upload.format = "service-worker"
+command = "yarn install && yarn build"

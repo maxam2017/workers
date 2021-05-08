@@ -1,5 +1,7 @@
 node_modules/
 packages/worker-example/
+dist
+packages/**/distg
 
 *.log
 .DS_Store
