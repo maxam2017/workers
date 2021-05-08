@@ -22,6 +22,8 @@ jobs:
           yarn install
           lerna bootstrap
           lerna run build
+      - name: deploy
+        run: |
           npm i @cloudflare/wrangler -g
           lerna run publish
         env:
