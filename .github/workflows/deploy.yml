@@ -20,6 +20,7 @@ jobs:
       - name: build
         run: |
           yarn install
+          lerna bootstrap
           lerna run build
           lerna run publish
         env:
