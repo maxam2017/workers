@@ -2,11 +2,15 @@
 
 name = "url-shortener"
 type = "javascript"
-account_id = ""
+account_id = "75ed923ff0a66b8294368448841bb028"
 zone_id = ""
 route = ""
 workers_dev = true
 
+kv_namespaces = [
+  { binding = "URL_SHORTENER", id = "86d32a6ff93046a0b4cb0748db477915", preview_id = "86d32a6ff93046a0b4cb0748db477915" }
+]
+
 [build]
 upload.format = "service-worker"
-command = "yarn install && yarn build"
+command = "npm install && npm run build"
