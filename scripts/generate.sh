@@ -12,4 +12,5 @@ git clone --depth=1 --branch=master git@github.com:maxam2017/worker-example pack
 rm -rf packages/$package_name/.git
 
 cd packages/$package_name && yarn init --yes > /dev/null 2>&1
+lerna bootstrap > /dev/null 2>&1
 echo "✨ Done! New project created `pwd`/packages/$package_name"

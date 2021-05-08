@@ -12,20 +12,23 @@
 ## Overview
 a repo for all interesting workers.
 
+## Setup
+```bash
+npm i @cloudflare/wrangler -g
+yarn install
+lerna bootstrap
+```
+
 ## FAQ
 1. How to create a new worker
 
 ```bash
 npm i @cloudflare/wrangler -g
 yarn generate <package-name>
-
-// get into packages/<package-name>/
-yarn install
-wrangler dev
 ```
 
 2. Where is global wrangle config?
-```
+```bash
 $HOME/.wrangler/config/default.toml
 ```
 

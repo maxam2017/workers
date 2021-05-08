@@ -1,5 +1,4 @@
 node_modules/
-packages/worker-example/
 dist
 packages/**/distg
 
