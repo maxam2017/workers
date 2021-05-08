@@ -15,7 +15,7 @@ a repo for all interesting workers.
 ## Setup
 ```bash
 npm i @cloudflare/wrangler -g
-yarn install
+npm install # use npm for lerna
 lerna bootstrap
 ```
 
@@ -24,7 +24,7 @@ lerna bootstrap
 
 ```bash
 npm i @cloudflare/wrangler -g
-yarn generate <package-name>
+npm run generate <package-name>
 ```
 
 2. Where is global wrangle config?
