@@ -2,7 +2,7 @@
 
 name = "url-shortener"
 type = "javascript"
-account_id = "75ed923ff0a66b8294368448841bb028"
+account_id = ""
 zone_id = ""
 route = ""
 workers_dev = true
