@@ -2,6 +2,7 @@
   <img src="https://i.imgur.com/1jj07Nvl.png" alt="worker logo" width="300">
 </p>
 <p align="center">
+  <img src="https://img.shields.io/github/workflow/status/maxam2017/workers/deploy?style=flat-square">
   <img src="https://img.shields.io/badge/language-typescript-blue?style=flat-square"/>
   <img src="https://img.shields.io/github/license/maxam2017/workers?style=flat-square"/>
 </p>
