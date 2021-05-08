@@ -1,1 +1,5 @@
 node_modules/
+packages/worker-example/
+
+*.log
+.DS_Store
