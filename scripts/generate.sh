@@ -8,13 +8,8 @@ else
 fi
 
 echo "🔧 Creating project called $package_name..."
-git clone git@github.com:maxam2017/worker-example packages/$package_name > /dev/null 2>&1
+git clone --depth=1 --branch=master git@github.com:maxam2017/worker-example packages/$package_name > /dev/null 2>&1
+rm -rf packages/$package_name/.git
 
 cd packages/$package_name && yarn init --yes > /dev/null 2>&1
-echo "✨   Done! New project created `pwd`/packages/$package_name"
-echo "🕵️  You can find your zone_id in the right sidebar of a zone's overview tab at https://dash.cloudflare.com"
-echo "🕵️  You can copy your account_id below"
-
-wrangler whoami
-echo "🕵️  You will need to update the following fields in the created packages/$package_name/wrangler.toml file before continuing:
-- account_id"
+echo "✨ Done! New project created `pwd`/packages/$package_name"
