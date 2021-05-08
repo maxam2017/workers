@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack",
-    "format": "prettier --write '**/*.{ts,js,css,json,md}'"
+    "format": "prettier --write '**/*.{ts,js,css,json,md}'",
+    "publish": "wrangler publish"
   },
   "author": "author",
   "license": "MIT OR Apache-2.0",
