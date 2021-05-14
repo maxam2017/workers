@@ -8,7 +8,7 @@ route = ""
 workers_dev = true
 
 kv_namespaces = [
-  { binding = "URL_SHORTENER", id = "86d32a6ff93046a0b4cb0748db477915", preview_id = "86d32a6ff93046a0b4cb0748db477915" }
+  { binding = "URL_SHORTENER", id = "86d32a6ff93046a0b4cb0748db477915", preview_id = "1f686100cc6b403e85f0a01cb12d34b2" }
 ]
 
 [build]
