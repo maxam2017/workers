@@ -32,7 +32,7 @@ export default async function recoveryHandler(req: Request) {
     JSON.stringify({
       id: key,
       url: record,
-      shortenUrl: `${new URL(req.url).origin}/${body.hash}`,
+      // shortenUrl: `${new URL(req.url).origin}/${body.hash}`,
     }),
     {
       headers: new Headers({

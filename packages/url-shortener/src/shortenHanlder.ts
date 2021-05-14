@@ -41,8 +41,8 @@ export default async function shortenHanlder(req: Request): Promise<Response> {
   }
 
   const encoded = base62.encode(parseInt(key, 16));
-  const shortenUrl = `${new URL(req.url).origin}/${encoded}`;
-  const data = { id: key, url: body.url, shortenUrl };
+  // const shortenUrl = `${new URL(req.url).origin}/${encoded}`;
+  const data = { id: key, url: body.url, hash: encoded };
   await URL_SHORTENER.put(key, body.url);
 
   return new Response(JSON.stringify(data), {
