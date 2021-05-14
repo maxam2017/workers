@@ -12,13 +12,21 @@
 
 ## Overview
 a repo for all interesting workers.
-
 ## Setup
 ```bash
 npm i @cloudflare/wrangler -g
 npm install # use npm for lerna
 lerna bootstrap
 ```
+
+## Command
+> `npm run pick <package-name> [...arguments of wrangler script]`
+
+|function|cmd|
+|-|-|
+|dev|`npm run pick <package-name> dev`|
+|build|`npm run pick <package-name> build`|
+|create kv namespace|`npm run pick <package-name> kv:namespace create <NAMESPACE> --preview`|
 
 ## FAQ
 1. How to create a new worker

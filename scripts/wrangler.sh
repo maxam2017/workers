@@ -10,5 +10,5 @@ fi
 
 echo "✨ Start $package_name..."
 
-cd packages/$package_name && CF_ACCOUNT_ID=$CF_ACCOUNT_ID wrangler "${@:2}" --stream
+cd packages/$package_name && CF_ACCOUNT_ID=$CF_ACCOUNT_ID wrangler "${@:2}"
 # lerna run --scope $package_name "${@:2}" --stream
