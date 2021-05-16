@@ -21,7 +21,7 @@ jobs:
         run: |
           npm install
           lerna bootstrap
-          lerna run build
+          npm run build
       - name: deploy
         run: |
           npm i @cloudflare/wrangler -g

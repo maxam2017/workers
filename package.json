@@ -5,7 +5,7 @@
   "author": "maxam2017 <whk0313@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "build": "lerna run --stream --sort build",
     "pick": "sh ./scripts/wrangler.sh",
     "generate": "sh ./scripts/generate.sh"
   },
