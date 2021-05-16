@@ -7,18 +7,18 @@ interface Options {
 }
 type Route = [regexp: RegExp, handlers: Handler[], method: string];
 
-export interface ExtendsRequest extends Request {
-  proxy?: ExtendsRequest;
+export interface RouterRequest extends Request {
+  proxy?: RouterRequest;
   params?: Record<string, string>;
   query?: Record<string, string>;
 }
 
 interface Handler {
-  (request: ExtendsRequest, ...args: any[]): Promise<Response>;
+  (request: RouterRequest, ...args: any[]): Promise<Response>;
 }
 
 interface Router {
-  handle(request: ExtendsRequest, ...args: any[]): void;
+  handle(request: RouterRequest, ...args: any[]): Promise<Response>;
   get(route: string, ...handlers: Handler[]): void;
   head(route: string, ...handlers: Handler[]): void;
   post(route: string, ...handlers: Handler[]): void;
@@ -43,14 +43,14 @@ interface Router {
  *   return new Response('Creating Todo: ' + JSON.stringify(content))
  * })
  */
-const Router = (options: Options = {}) => {
+const router = (options: Options = {}) => {
   const _base = options.base || "";
   const _routes: Route[] = [];
 
   return new Proxy(options, {
     get: (_, prop) =>
       prop === "handle"
-        ? async (request: ExtendsRequest, ...args: any[]) => {
+        ? async (request: RouterRequest, ...args: any[]) => {
             const routes = _routes.filter(
               ([_regexp, _handlers, method]) =>
                 method === request.method || method === "ALL"
@@ -71,13 +71,14 @@ const Router = (options: Options = {}) => {
               }
             }
           }
-        : (route: string, ...handlers: Handler[]) =>
+        : (route: string, ...handlers: Handler[]) => {
             _routes.push([
               pathToRegexp(_base + route),
               handlers,
               prop.toString().toUpperCase(),
-            ]),
+            ]);
+          },
   }) as Router;
 };
 
-export default Router;
+export default router;
