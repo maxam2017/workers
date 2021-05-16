@@ -13,4 +13,4 @@ kv_namespaces = [
 
 [build]
 upload.format = "service-worker"
-command = "npm install && npm run build"
+command = "lerna bootstrap && npm run build"

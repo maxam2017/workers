@@ -1,7 +1,8 @@
+import type { RouterRequest } from 'router/dist/router';
 import base62 from './base62';
 import bodyParser from './bodyParser';
 
-export default async function recoveryHandler(req: Request) {
+export default async function recoveryHandler(req: RouterRequest) {
   if (req.method !== 'POST') {
     return new Response(
       JSON.stringify({ status: 405, message: 'method not allowed' }),

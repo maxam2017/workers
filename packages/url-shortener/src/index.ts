@@ -1,22 +1,17 @@
 import recoveryHandler from './recoveryHandler';
 import shortenHanlder from './shortenHanlder';
+import Router from 'router';
 
 declare global {
   const URL_SHORTENER: KVNamespace;
 }
 
-addEventListener('fetch', async (event) => {
-  const { request } = event;
-  const pathname = new URL(request.url).pathname.split('/')[1];
+const router = Router();
 
-  switch (pathname) {
-    case 'shorten':
-      event.respondWith(shortenHanlder(request));
-      break;
-    case 'recovery':
-      event.respondWith(recoveryHandler(request));
-      break;
-    default:
-      event.respondWith(new Response('', { status: 404 }));
-  }
+router.post('/shorten', shortenHanlder);
+router.post('/recovery', recoveryHandler);
+router.all('*', async () => new Response('', { status: 404 }));
+
+addEventListener('fetch', async (event) => {
+  event.respondWith(router.handle(event.request));
 });
