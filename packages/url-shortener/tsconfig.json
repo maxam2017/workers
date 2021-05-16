@@ -14,7 +14,7 @@
   },
   "include": [
     "./src/*.ts",
-    "./src/**/*.ts",
+    "./src/**/*.ts", "../router/src/body-parser.ts",
   ],
   "exclude": ["node_modules/", "dist/"]
 }

@@ -1,6 +1,5 @@
 import type { RouterRequest } from 'router/dist/router';
 import base62 from './base62';
-import bodyParser from './bodyParser';
 
 export default async function shortenHanlder(
   req: RouterRequest,
@@ -12,7 +11,7 @@ export default async function shortenHanlder(
     );
   }
 
-  const body = await bodyParser(req);
+  const body = req.data;
   if (!body?.url) {
     return new Response(
       JSON.stringify({ status: 400, message: 'invalid request body' }),

@@ -1,5 +1,6 @@
 // extends from https://github.com/kwhitley/itty-router/blob/v2.x/src/itty-router.js
 
+import bodyParser from "./body-parser";
 import pathToRegexp from "./path-to-regexp";
 
 interface Options {
@@ -11,6 +12,7 @@ export interface RouterRequest extends Request {
   proxy?: RouterRequest;
   params?: Record<string, string>;
   query?: Record<string, string>;
+  data: any;
 }
 
 interface Handler {
@@ -63,6 +65,7 @@ const router = (options: Options = {}) => {
               request.params = match.groups;
               request.query =
                 request.query || Object.fromEntries(url.searchParams.entries());
+              request.data = await bodyParser(request);
 
               for (let handler of handlers) {
                 const req = request.proxy || request;

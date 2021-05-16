@@ -1,6 +1,5 @@
 import type { RouterRequest } from 'router/dist/router';
 import base62 from './base62';
-import bodyParser from './bodyParser';
 
 export default async function recoveryHandler(req: RouterRequest) {
   if (req.method !== 'POST') {
@@ -10,7 +9,7 @@ export default async function recoveryHandler(req: RouterRequest) {
     );
   }
 
-  const body = await bodyParser(req);
+  const body = req.data;
   if (!body?.hash) {
     return new Response(
       JSON.stringify({ status: 400, message: 'invalid request body' }),
