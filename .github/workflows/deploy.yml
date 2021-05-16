@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: build
         run: |
-          yarn install
+          npm install
           lerna bootstrap
           lerna run build
       - name: deploy
